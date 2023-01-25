@@ -9,7 +9,7 @@ pipeline {
     stage('docker build') {
       steps {
         sh '''
-        mkdir /ref
+        cd /ref
         '''
       }
     }
