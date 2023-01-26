@@ -19,7 +19,7 @@ pipeline {
     stage('docker push') {
       steps {
         sh '''
-        sudo docker push 192.168.55.82:5000/nginx:
+        sudo docker push 192.168.55.82:5000/nginx:b
         '''
       }
     }
