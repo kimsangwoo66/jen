@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
         cd /ref
-        sudo docker build -t 192.168.55.82:5000/nginx:k .
+        sudo docker build -t 192.168.55.82:5000/nginx:b .
         '''
       }
     }
@@ -19,7 +19,7 @@ pipeline {
     stage('docker push') {
       steps {
         sh '''
-        sudo docker push 192.168.55.82:5000/nginx:k
+        sudo docker push 192.168.55.82:5000/nginx:
         '''
       }
     }
