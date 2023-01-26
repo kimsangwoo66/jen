@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+  labels:
+    app: test-pod
+spec:
+  containers:
+    - name: test-pod
+      image: 192.168.55.82:5000/nginx:b
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-svc
+spec:
+  selector:
+    app: test-pod
+  ports:
+    - name: nginx
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30001
+  type: NodePort
